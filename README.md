@@ -1,20 +1,30 @@
 # Caffe-mini
 Zero dependents caffe for testing phase
 
-## Tips for Visual Studio 2015
-If you want to compile it with Visual Studio 2015, you can add these flags:
+## Compile it with Visual Studio 2015
+First clone this project from the original git:
 
+    git clone https://github.com/ufoym/Caffe-mini.git
+
+Then create an empty project with Visual Studio 2015. In the Solution Explorer, right click Source Files -> Add Existing Item, then choose the caffe.cpp from the project you forked from git.
+
+Before you can run it, you must do these things:
     Right click on your project's entry in solution explorer,
     Select Properties,
-    Select Configuration: All Configurations,
-    Expand the C/C++ tree entry,
-    Select Preprocessor,
+	Choose C/C++, then click the General,
+	In the "Additional Include Directories", add the whole project you forked from git, it is \path\to\Caffe-mini
+	Still in C/C++, Select Preprocessor,
     add these flags to "Preprocessor Definitions":
         USE_EIGEN
         _CRT_SECURE_NO_DEPRECATE
         _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS=1
         
     one flag per line.
-The '_CRT_SECURE_NO_DEPRECATE' flag will fix the problem "'fopen' was declared deprecated"
+	
+After this, choose Source Files in Solution Explorer, right click and add New Filter, the Filter name should be 'caffe', and then copy all the files in the folder 'caffe' from the git project, to this New Filter
 
-The '_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS=1' flag could fix the problem "hash_map is deprecated and will be removed"
+Create another New Filter called 'google', again, copy all the files in the original 'google' folder to this new Filter
+
+Now, you can build your own solution
+	
+
