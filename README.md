@@ -9,14 +9,23 @@ First clone this project from the original git:
 Then create an empty project with Visual Studio 2015. In the Solution Explorer, right click Source Files -> Add Existing Item, then choose the caffe.cpp from the project you forked from git.
 
 Before you can run it, you must do these things:
+
     Right click on your project's entry in solution explorer,
+	
     Select Properties,
+	
 	Choose C/C++, then click the General,
+	
 	In the "Additional Include Directories", add the whole project you forked from git, it is \path\to\Caffe-mini
+	
 	Still in C/C++, Select Preprocessor,
+	
     add these flags to "Preprocessor Definitions":
+	
         USE_EIGEN
+		
         _CRT_SECURE_NO_DEPRECATE
+		
         _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS=1
         
     one flag per line.
