@@ -74,5 +74,7 @@ The test example is based on the Lenet network and mnist data set, in order to t
 ## Future Work
 
 Make this downgrade_proto.cpp code support more complicated layers
+
+Add opencv, make this Caffe could directly input the image
 	
 
