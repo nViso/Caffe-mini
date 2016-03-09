@@ -38,7 +38,29 @@ Now, you can build your own solution
 
 ## Version Problem
 
-This Caffe Mini is based on the Caffe version 0.99 from https://github.com/BVLC/caffe, so the caffe.proto file is different from the latest one. In order to run this Caffe, make sure your .prototxt file and weights file (the caffe model) is the same format as the version 0.99. As the model changes since Caffe 0.999, our model can not test the model trained with Caffe newer than version 0.99.
+This Caffe Mini is based on the Caffe version 0.99 from https://github.com/BVLC/caffe, so the caffe.proto file is different from the latest one. In order to run this Caffe, make sure your .prototxt file and weights file (the caffe model) is the same format as the version 0.99. As the model changes since Caffe 0.999, V0 Caffe can not test the model trained with Caffe newer than version 0.99.
+
+In order to solve this problem, I write a code called downgrade_proto.cpp, which could transfer simple v2 model to v0 model (like lenet), both prototxt and the binary weights. As the Caffe is complicated, I only consider several widely used layers and fields, it may fail to transfer some complex networks if it contains the layers I don't add in the code. You can add these layers by yourself, it is quited simple.
+
+## How to downgrade V2 model to V0
+
+Right click on your project's entry in solution explorer,
+	
+    Select Properties,
+	
+	Choose C/C++, then click the General,
+	
+	In the "Additional Include Directories", add the "new_caffe" folder you forked from git, it is \path\to\new_caffe
+	
+	run the downgrade_proto.cpp code , input 4 parameters:
+	
+	v2_prototxt v2_caffemodel v0_output_prototxt v0_output_caffemodel
+	
+	for example:
+	
+	lenet.prototxt lenet_iter_10000.caffemodel v0Proto.prototxt v0Weight.caffemodel
+
+ 
 
 ## About the Test Example
 The test example is based on the Lenet network and mnist data set, in order to test this model, just input:
@@ -51,6 +73,6 @@ The test example is based on the Lenet network and mnist data set, in order to t
  
 ## Future Work
 
-Make this Caffe Mini support trained model from the up-to-date Caffe
+Make this downgrade_proto.cpp code support more complicated layers
 	
 
