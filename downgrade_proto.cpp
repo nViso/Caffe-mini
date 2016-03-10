@@ -219,7 +219,7 @@ bool SetConvLayer(caffe::LayerParameter* v0_layer, new_caffe::LayerParameter lay
 	v0_layer->set_type("conv");
 
 	// copy the blob information from v2 net to v0 net if it exists
-	CopyBlobs(v0_layer, layer);
+	success &= CopyBlobs(v0_layer, layer);
 
 	v0_layer->set_num_output(layer.convolution_param().num_output());
 
@@ -300,6 +300,22 @@ bool SetIPLayer(caffe::LayerParameter* v0_layer, new_caffe::LayerParameter layer
 
 }
 
+// set the dropout layer
+bool SetDropoutLayer(caffe::LayerParameter* v0_layer, new_caffe::LayerParameter layer)
+{
+	bool success = true;
+	v0_layer->set_type("dropout");
+	// add dropout ratio
+	if (layer.has_dropout_param())
+	v0_layer->set_dropout_ratio(layer.dropout_param().dropout_ratio());
+
+	// add blobs if they exist
+	success &= CopyBlobs(v0_layer, layer);
+	return success;
+
+}
+
+
 // downgrade the net prarameter from v2 to v0
 bool DownGradeV2ToV0(caffe::NetParameter* v0_net, new_caffe::NetParameter v2_net)
 {
@@ -320,6 +336,12 @@ bool DownGradeV2ToV0(caffe::NetParameter* v0_net, new_caffe::NetParameter v2_net
 				v0_net->add_input_dim(dim);
 			}
 		}
+
+	// copy input dim if it exists in v2 network
+	for (int i = 0; i < v2_net.input_dim_size(); ++i)
+	{
+		v0_net->add_input_dim(v2_net.input_dim(i));
+	}
 
 
 	
@@ -384,10 +406,14 @@ bool DownGradeV2ToV0(caffe::NetParameter* v0_net, new_caffe::NetParameter v2_net
 		{
 			v0_layer.set_type("softmax_loss");
 		}
+		else if (layer.type().compare("Dropout") == 0) 
+		{
+			success &= SetDropoutLayer(&v0_layer, layer);
+		}
 		else
 		{
-			cout << "there exists unknown layers: " << layer.type() << endl;
-			success = false;
+			// for other layers, we just copy the type name, this could cause problem with layers containing other parameters
+			v0_layer.set_type(layer.type());
 		}
 
 		layer_conn->mutable_layer()->CopyFrom(v0_layer);
