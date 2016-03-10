@@ -49,7 +49,8 @@ The test example is based on the Lenet network and mnist data set, in order to t
  
  lenet.prototxt lenet_iter_10000 1 t10k-images.idx3-ubyte result  CPU
  
- ##Future Work
- Make this Caffe Mini support trained model from the up-to-date Caffe
+## Future Work
+
+Make this Caffe Mini support trained model from the up-to-date Caffe
 	
 
