@@ -1,5 +1,23 @@
 # Caffe-mini
-Zero dependents caffe for testing phase
+Low dependents caffe for testing phase
+
+## Dependence
+
+As a mini Caffe, this one could directly test a trained model. We remove most dependence but still keep 2 libraries, in order to make it could load prototxt and input image.
+
+The 2 dependence is Protobuf and Opencv, for the protobuf, it already exist in the project, you can directly use it. For the Opencv, you need to install it by yourself and add it to the project.
+
+The Opencv version I use is 2.4.11, and I cmake it to support vc 14 for x86 structure.  Here is the guidance show how to cmake it 
+
+http://amin-ahmadi.com/2015/12/04/how-to-build-opencv-from-source-for-vc14/
+
+You need first download the opencv from official webside, and then cmake it according to this guidance. After doing this, you need to first add it to your envirment variables and then set it in your visual studio. Here is the guidance show how to set environment variables and add it to visual studio.
+
+http://opencv-srf.blogspot.ch/2013/05/installing-configuring-opencv-with-vs.html
+
+Note: instead of vc11 you need vc14 for visual studio 2015, modify this in all the pathes. As the bin folder contains both debug and release, you should add 2 paths to the PATH environment variable, they are %OPENCV_DIR%\x86\vc14\bin\Debug and %OPENCV_DIR%\x86\vc14\bin\Release, rather than the %OPENCV_DIR%\x86\vc11\bin in the above guidance. What's more, in the visual studio, in debug mode, add $(OPENCV_DIR)\x86\vc14\lib\Debug and list the *.libs in the Debug folder. In release mode, add $(OPENCV_DIR)\x86\vc14\lib\Release and list the *.libs in the Release folder(the linker general and input part). You can add a new filder called "opencv2" and copy all the files in opencv\include\opencv2 to this folder.
+
+Now you have already set all the dependence, if visual studio can not open head files in opencv2, close visual studio and open it again, remember to save the changes before close it.
 
 ## Compile it with Visual Studio 2015
 First clone this project from the original git:
@@ -73,6 +91,6 @@ The test example is based on the Lenet network and mnist data set, in order to t
  
 ## Future Work
 
-Add opencv, make this Caffe could directly input the image
+Add one test example, which directly test a complicated trained model
 	
 
