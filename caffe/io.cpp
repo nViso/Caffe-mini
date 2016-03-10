@@ -11,6 +11,10 @@
 #include <vector>
 #include <fstream>  // NOLINT(readability/streams)
 
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+
 #ifdef _MSC_VER
 #include <io.h>  /* for open/close */
 #else
@@ -75,78 +79,75 @@ void WriteProtoToBinaryFile(const Message& proto, const char* filename) {
   CHECK(proto.SerializeToOstream(&output));
 }
 
-#if 0
 bool ReadImageToDatum(const string& filename, const int label,
-    const int height, const int width, Datum* datum) {
-  cv::Mat cv_img;
-  if (height > 0 && width > 0) {
-    cv::Mat cv_img_origin = cv::imread(filename, CV_LOAD_IMAGE_COLOR);
-    cv::resize(cv_img_origin, cv_img, cv::Size(height, width));
-  } else {
-    cv_img = cv::imread(filename, CV_LOAD_IMAGE_COLOR);
-  }
-  if (!cv_img.data) {
-    LOG(ERROR) << "Could not open or find file " << filename;
-    return false;
-  }
-  datum->set_channels(3);
-  datum->set_height(cv_img.rows);
-  datum->set_width(cv_img.cols);
-  datum->set_label(label);
-  datum->clear_data();
-  datum->clear_float_data();
-  string* datum_string = datum->mutable_data();
-  for (int c = 0; c < 3; ++c) {
-    for (int h = 0; h < cv_img.rows; ++h) {
-      for (int w = 0; w < cv_img.cols; ++w) {
-        datum_string->push_back(
-            static_cast<char>(cv_img.at<cv::Vec3b>(h, w)[c]));
-      }
-    }
-  }
-  return true;
+	const int height, const int width, Datum* datum) {
+	cv::Mat cv_img;
+	if (height > 0 && width > 0) {
+		cv::Mat cv_img_origin = cv::imread(filename, CV_LOAD_IMAGE_COLOR);
+		cv::resize(cv_img_origin, cv_img, cv::Size(height, width));
+	}
+	else {
+		cv_img = cv::imread(filename, CV_LOAD_IMAGE_COLOR);
+	}
+	if (!cv_img.data) {
+		LOG(ERROR) << "Could not open or find file " << filename;
+		return false;
+	}
+	datum->set_channels(3);
+	datum->set_height(cv_img.rows);
+	datum->set_width(cv_img.cols);
+	datum->set_label(label);
+	datum->clear_data();
+	datum->clear_float_data();
+	string* datum_string = datum->mutable_data();
+	for (int c = 0; c < 3; ++c) {
+		for (int h = 0; h < cv_img.rows; ++h) {
+			for (int w = 0; w < cv_img.cols; ++w) {
+				datum_string->push_back(
+					static_cast<char>(cv_img.at<cv::Vec3b>(h, w)[c]));
+			}
+		}
+	}
+	return true;
 }
 
+#if 0
 // Verifies format of data stored in HDF5 file and reshapes blob accordingly.
 template <typename Dtype>
 void hdf5_load_nd_dataset_helper(
-    hid_t file_id, const char* dataset_name_, int min_dim, int max_dim,
-    Blob<Dtype>* blob) {
-  // Verify that the number of dimensions is in the accepted range.
-  herr_t status;
-  int ndims;
-  status = H5LTget_dataset_ndims(file_id, dataset_name_, &ndims);
-  CHECK_GE(ndims, min_dim);
-  CHECK_LE(ndims, max_dim);
-
-  // Verify that the data format is what we expect: float or double.
-  std::vector<hsize_t> dims(ndims);
-  H5T_class_t class_;
-  status = H5LTget_dataset_info(
-      file_id, dataset_name_, dims.data(), &class_, NULL);
-  CHECK_EQ(class_, H5T_FLOAT) << "Expected float or double data";
-
-  blob->Reshape(
-    dims[0],
-    (dims.size() > 1) ? dims[1] : 1,
-    (dims.size() > 2) ? dims[2] : 1,
-    (dims.size() > 3) ? dims[3] : 1);
+	hid_t file_id, const char* dataset_name_, int min_dim, int max_dim,
+	Blob<Dtype>* blob) {
+	// Verify that the number of dimensions is in the accepted range.
+	herr_t status;
+	int ndims;
+	status = H5LTget_dataset_ndims(file_id, dataset_name_, &ndims);
+	CHECK_GE(ndims, min_dim);
+	CHECK_LE(ndims, max_dim);
+	// Verify that the data format is what we expect: float or double.
+	std::vector<hsize_t> dims(ndims);
+	H5T_class_t class_;
+	status = H5LTget_dataset_info(
+		file_id, dataset_name_, dims.data(), &class_, NULL);
+	CHECK_EQ(class_, H5T_FLOAT) << "Expected float or double data";
+	blob->Reshape(
+		dims[0],
+		(dims.size() > 1) ? dims[1] : 1,
+		(dims.size() > 2) ? dims[2] : 1,
+		(dims.size() > 3) ? dims[3] : 1);
 }
-
 template <>
 void hdf5_load_nd_dataset<float>(hid_t file_id, const char* dataset_name_,
-        int min_dim, int max_dim, Blob<float>* blob) {
-  hdf5_load_nd_dataset_helper(file_id, dataset_name_, min_dim, max_dim, blob);
-  herr_t status = H5LTread_dataset_float(
-    file_id, dataset_name_, blob->mutable_cpu_data());
+	int min_dim, int max_dim, Blob<float>* blob) {
+	hdf5_load_nd_dataset_helper(file_id, dataset_name_, min_dim, max_dim, blob);
+	herr_t status = H5LTread_dataset_float(
+		file_id, dataset_name_, blob->mutable_cpu_data());
 }
-
 template <>
 void hdf5_load_nd_dataset<double>(hid_t file_id, const char* dataset_name_,
-        int min_dim, int max_dim, Blob<double>* blob) {
-  hdf5_load_nd_dataset_helper(file_id, dataset_name_, min_dim, max_dim, blob);
-  herr_t status = H5LTread_dataset_double(
-    file_id, dataset_name_, blob->mutable_cpu_data());
+	int min_dim, int max_dim, Blob<double>* blob) {
+	hdf5_load_nd_dataset_helper(file_id, dataset_name_, min_dim, max_dim, blob);
+	herr_t status = H5LTread_dataset_double(
+		file_id, dataset_name_, blob->mutable_cpu_data());
 }
 #endif
 
