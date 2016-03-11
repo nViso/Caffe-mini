@@ -70,7 +70,7 @@ Right click on your project's entry in solution explorer,
 	
 	In the "Additional Include Directories", add the "new_caffe" folder you forked from git, it is \path\to\new_caffe
 	
-	run the downgrade_proto.cpp code , input 4 parameters:
+	run the downgrade_example.cpp code , input 4 parameters:
 	
 	v2_prototxt v2_caffemodel v0_output_prototxt v0_output_caffemodel
 	
@@ -83,14 +83,26 @@ Right click on your project's entry in solution explorer,
 ## About the Test Example
 The test example is based on the Lenet network and mnist data set, in order to test this model, just input:
 
- *.prototx weight_file(which is the .caffemodel file in the up-to-date Caffe) number_of_iterations input_images output_directory CPU/GPU(only support CPU)
+ *.prototxt weight_file(which is the .caffemodel file in the up-to-date Caffe) number_of_iterations input_images output_directory CPU/GPU(only support CPU)
  
  for example:
  
  lenet.prototxt lenet_iter_10000 1 t10k-images.idx3-ubyte result  CPU
  
+## About the Complex Test Example
+The test example is based on a complicated face landmark model, you can find the input files in the folder "complex_example". In this folder, there are both v2 and v0 models, you can also get the v0 model from v2 with codes in downgrade_proto.cpp. In order to test the model, directly run test_complex.cpp, with input:
+
+ *.prototxt weight_file(which is the .caffemodel file in the up-to-date Caffe) number_of_iterations input_images output_directory CPU/GPU(only support CPU)
+ 
+ for example:
+ 
+ v0_proto.prototxt v0_weights.caffemodel 1 image_data.binaryproto result  CPU
+ 
+ 
+ The example also shows how to read v2 binaryproto file to our model.
+ 
 ## Future Work
 
-Add one test example, which directly test a complicated trained model
+Update the codes, make it more clear.
 	
 
