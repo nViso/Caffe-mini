@@ -89,6 +89,8 @@ The test example is based on the Lenet network and mnist data set, in order to t
  
  lenet.prototxt lenet_iter_10000 1 t10k-images.idx3-ubyte result  CPU
  
+ Make sure to create the result folder before test it
+ 
 ## About the Complex Test Example
 The test example is based on a complicated face landmark model, you can find the input files in the folder "complex_example". In this folder, there are both v2 and v0 models, you can also get the v0 model from v2 with codes in downgrade_proto.cpp. In order to test the model, directly run test_complex.cpp, with input:
 
@@ -97,6 +99,8 @@ The test example is based on a complicated face landmark model, you can find the
  for example:
  
  v0_proto.prototxt v0_weights.caffemodel 1 image_data.binaryproto result  CPU
+ 
+  Make sure to create the result folder before test it
  
  
  The example also shows how to read v2 binaryproto file to our model.
