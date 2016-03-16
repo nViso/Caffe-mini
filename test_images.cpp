@@ -31,6 +31,49 @@ static void save_blob(const string& fn, Blob<Dtype> *b) {
 	fclose(f);
 }
 
+template <typename Dtype>
+static void save_blobs_to_json(const string& fn, Blob<Dtype> *landmark, Blob<Dtype> *yaw, Blob<Dtype> *pitch, Blob<Dtype> *roll) {
+	LOG(INFO) << "Saving " << fn;
+	FILE *f = fopen(fn.c_str(), "wb");
+	CHECK(f != NULL);
+
+	// the facedata part
+	fprintf(f, "%s\n", "{\"FaceData\": [{");
+
+	//the HeadPose part
+	fprintf(f, "%s", "\"HeadPose\": {\n");
+
+	// the pitch
+	fprintf(f, "%s", "\"Pitch\": ");
+	fprintf(f, "%f%s\n",pitch->cpu_data()[0],",");
+
+	// the roll
+	fprintf(f, "%s", "\"Roll\": ");
+	fprintf(f, "%f%s\n", roll->cpu_data()[0], ",");
+
+	// the yaw
+	fprintf(f, "%s", "\"Yaw\": ");
+	fprintf(f, "%f\n", yaw->cpu_data()[0]);
+	fprintf(f, "%s\n", "},");
+
+	// the landmark32
+	fprintf(f, "%s\n", "\"Landmark32\": {");
+
+	for (int i = 0; i < landmark->count(); i=i+2)
+	{
+		int j = i / 2;
+		int first_digit = j / 100;
+		int second_digit = (j-100*first_digit) / 10;
+		int third_digit = j-100*first_digit-10*second_digit;
+		fprintf(f, "%s%d%d%d%s\n", "\"Pt_",first_digit,second_digit,third_digit,"\": {");
+		fprintf(f, "%s%f%s\n","\"X\": \"", landmark->cpu_data()[i],"\",");
+		fprintf(f, "%s%f%s\n", "\"Y\": \"", landmark->cpu_data()[i+1], "\"");
+		if (i== landmark->count()-2) fprintf(f, "%s\n%s\n%s", "}","}","}]}");
+		else fprintf(f, "%s\n","},");
+	}
+	fclose(f);
+}
+
 
 int main(int argc, char** argv)
 {
@@ -85,10 +128,8 @@ int main(int argc, char** argv)
 	LOG(ERROR) << "Running " << total_iter << " Iterations.";
 
 	//save layer, the output directory
-	char output_dir_landmark[1024];
-	char output_dir_Yaw[1024];
-	char output_dir_Pitch[1024];
-	char output_dir_Roll[1024];
+	char output_dir[1024];
+
 
 	// the layer index of the output layer
 	int output_layer_idx_landmark = -1;
@@ -171,21 +212,23 @@ int main(int argc, char** argv)
 		const vector<Blob<float>*>& result =
 			caffe_test_net.Forward(caffe_test_net.input_blobs());
 
+		// save the file to json with the same name as the image
+		string input_name = argv[4];
+		cout << input_name << endl;
+		int size_of_name = input_name.size();
+		string output_name = input_name.substr(0, size_of_name - 4);
+        
+		// get the c string of output file name
+		char *c_name = new char[output_name.length() + 1];
+		strcpy(c_name, output_name.c_str());
+
 		// save the result to the result directory, the number is the index of iteration
-	
-		    sprintf(output_dir_landmark, "%s/%s_Landmarks", argv[5], argv[4]);
+		sprintf(output_dir, "%s/%s.json", argv[5], c_name);
 
-			sprintf(output_dir_Yaw, "%s/%s_Yaw", argv[5], argv[4]);
 	
-			sprintf(output_dir_Pitch, "%s/%s_Pitch", argv[5], argv[4]);
-	
-			sprintf(output_dir_Roll, "%s/%s_Roll", argv[5], argv[4]);
-	
-
-		save_blob(output_dir_landmark, output_landmark);
-		save_blob(output_dir_Yaw, output_Yaw);
-		save_blob(output_dir_Pitch, output_Pitch);
-		save_blob(output_dir_Roll, output_Roll);
+        // save the result to json format
+		save_blobs_to_json(output_dir, output_landmark,output_Yaw,output_Pitch,output_Roll);
+		
 	}
 	cout << "output is saved in " << argv[5] << " directory" << endl;
 	return 0;
