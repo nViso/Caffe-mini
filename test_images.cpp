@@ -96,10 +96,7 @@ int main(int argc, char** argv)
 	int output_layer_idx_Pitch = -1;
 	int output_layer_idx_Roll = -1;
 
-	// the name of the output layer
-	string output_name = "ip1_3";
-
-	// find the index of output layer
+	// find the index of output layer, there are 4 outputs, landmark, yaw, pitch and roll
 	for (int i = 0; i < caffe_test_net.layer_names().size(); i++)
 	{
 		if (caffe_test_net.layer_names()[i] == "ip0_3") { // here the output layer is the inner product layer
@@ -140,6 +137,7 @@ int main(int argc, char** argv)
 
 	Datum datum;
 	ReadGrayImageToDatum(argv[4], 1, 40, 40, &datum);
+
 	//get the blobproto
 	BlobProto blob_proto;
 	blob_proto.set_num(1);
@@ -152,7 +150,9 @@ int main(int argc, char** argv)
 	for (int i = 0; i < size_in_datum; ++i) {
 		blob_proto.add_data(0.);
 	}
+
 	const string& data = datum.data();
+	// normalize the data by 255
 	if (data.size() != 0) {
 		for (int i = 0; i < size_in_datum; ++i) {
 			blob_proto.set_data(i, blob_proto.data(i) + (uint8_t)data[i]/255.);
