@@ -31,6 +31,8 @@ static void save_blob(const string& fn, Blob<Dtype> *b) {
 	fclose(f);
 }
 
+
+// save all the outputs to json format
 template <typename Dtype>
 static void save_blobs_to_json(const string& fn, Blob<Dtype> *landmark, Blob<Dtype> *yaw, Blob<Dtype> *pitch, Blob<Dtype> *roll) {
 	LOG(INFO) << "Saving " << fn;
@@ -45,7 +47,7 @@ static void save_blobs_to_json(const string& fn, Blob<Dtype> *landmark, Blob<Dty
 
 	// the pitch
 	fprintf(f, "%s", "\"Pitch\": ");
-	fprintf(f, "%f%s\n",pitch->cpu_data()[0],",");
+	fprintf(f, "%f%s\n", pitch->cpu_data()[0], ",");
 
 	// the roll
 	fprintf(f, "%s", "\"Roll\": ");
@@ -59,17 +61,17 @@ static void save_blobs_to_json(const string& fn, Blob<Dtype> *landmark, Blob<Dty
 	// the landmark32
 	fprintf(f, "%s\n", "\"Landmark32\": {");
 
-	for (int i = 0; i < landmark->count(); i=i+2)
+	for (int i = 0; i < landmark->count(); i = i + 2)
 	{
 		int j = i / 2;
 		int first_digit = j / 100;
-		int second_digit = (j-100*first_digit) / 10;
-		int third_digit = j-100*first_digit-10*second_digit;
-		fprintf(f, "%s%d%d%d%s\n", "\"Pt_",first_digit,second_digit,third_digit,"\": {");
-		fprintf(f, "%s%f%s\n","\"X\": \"", landmark->cpu_data()[i],"\",");
-		fprintf(f, "%s%f%s\n", "\"Y\": \"", landmark->cpu_data()[i+1], "\"");
-		if (i== landmark->count()-2) fprintf(f, "%s\n%s\n%s", "}","}","}]}");
-		else fprintf(f, "%s\n","},");
+		int second_digit = (j - 100 * first_digit) / 10;
+		int third_digit = j - 100 * first_digit - 10 * second_digit;
+		fprintf(f, "%s%d%d%d%s\n", "\"Pt_", first_digit, second_digit, third_digit, "\": {");
+		fprintf(f, "%s%f%s\n", "\"X\": \"", landmark->cpu_data()[i], "\",");
+		fprintf(f, "%s%f%s\n", "\"Y\": \"", landmark->cpu_data()[i + 1], "\"");
+		if (i == landmark->count() - 2) fprintf(f, "%s\n%s\n%s", "}", "}", "}]}");
+		else fprintf(f, "%s\n", "},");
 	}
 	fclose(f);
 }
@@ -140,19 +142,19 @@ int main(int argc, char** argv)
 	// find the index of output layer, there are 4 outputs, landmark, yaw, pitch and roll
 	for (int i = 0; i < caffe_test_net.layer_names().size(); i++)
 	{
-		if (caffe_test_net.layer_names()[i] == "ip0_3") { // here the output layer is the inner product layer
+		if (caffe_test_net.layer_names()[i] == "ip0_3") {
 			output_layer_idx_landmark = i;
 		}
 
-		if (caffe_test_net.layer_names()[i] == "ip1_3") { // here the output layer is the inner product layer
+		if (caffe_test_net.layer_names()[i] == "ip1_3") {
 			output_layer_idx_Yaw = i;
 		}
 
-		if (caffe_test_net.layer_names()[i] == "ip2_3") { // here the output layer is the inner product layer
+		if (caffe_test_net.layer_names()[i] == "ip2_3") {
 			output_layer_idx_Pitch = i;
 		}
 
-		if (caffe_test_net.layer_names()[i] == "ip3_3") { // here the output layer is the inner product layer
+		if (caffe_test_net.layer_names()[i] == "ip3_3") {
 			output_layer_idx_Roll = i;
 		}
 	}
@@ -174,8 +176,8 @@ int main(int argc, char** argv)
 
 
 	cout << "start loading the image" << endl;
-	//load the input image
 
+	//load the input image
 	Datum datum;
 	ReadGrayImageToDatum(argv[4], 1, 40, 40, &datum);
 
@@ -196,7 +198,7 @@ int main(int argc, char** argv)
 	// normalize the data by 255
 	if (data.size() != 0) {
 		for (int i = 0; i < size_in_datum; ++i) {
-			blob_proto.set_data(i, blob_proto.data(i) + (uint8_t)data[i]/255.);
+			blob_proto.set_data(i, blob_proto.data(i) + (uint8_t)data[i] / 255.);
 		}
 	}
 
@@ -214,21 +216,20 @@ int main(int argc, char** argv)
 
 		// save the file to json with the same name as the image
 		string input_name = argv[4];
-		cout << input_name << endl;
 		int size_of_name = input_name.size();
 		string output_name = input_name.substr(0, size_of_name - 4);
-        
+
 		// get the c string of output file name
 		char *c_name = new char[output_name.length() + 1];
 		strcpy(c_name, output_name.c_str());
 
-		// save the result to the result directory, the number is the index of iteration
+		// save the result to the result directory
 		sprintf(output_dir, "%s/%s.json", argv[5], c_name);
 
-	
-        // save the result to json format
-		save_blobs_to_json(output_dir, output_landmark,output_Yaw,output_Pitch,output_Roll);
-		
+
+		// save the result to json format
+		save_blobs_to_json(output_dir, output_landmark, output_Yaw, output_Pitch, output_Roll);
+
 	}
 	cout << "output is saved in " << argv[5] << " directory" << endl;
 	return 0;
