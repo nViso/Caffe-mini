@@ -7,17 +7,16 @@
 #include<stdlib.h>
 #include<infstr.h>
 #include <fstream>
-#include "new_caffe/new_caffe.pb.h"
 #include <google/protobuf/text_format.h>
 
 #include "caffe/caffe.hpp"
 
-#include "downgrade_proto.hpp"
+
 
 using namespace caffe;  // NOLINT(build/namespaces)
 using namespace std;
 using namespace google::protobuf;
-using namespace downgrade_proto;
+
 
 template <typename Dtype>
 static void save_blob(const string& fn, Blob<Dtype> *b) {
