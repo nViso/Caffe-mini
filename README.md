@@ -87,18 +87,18 @@ The test example is based on the Lenet network and mnist data set, in order to t
  
  for example:
  
- lenet.prototxt lenet_iter_10000 1 t10k-images.idx3-ubyte result  CPU
+ ` lenet.prototxt lenet_iter_10000 1 t10k-images.idx3-ubyte result  CPU `
  
  Make sure to create the result folder before test it
  
 ## About the Complex Test Example
 The test example is based on a complicated face landmark model, you can find the input files in the folder "complex_example". In this folder, there are both v2 and v0 models, you can also get the v0 model from v2 with codes in downgrade_proto.cpp. In order to test the model, directly run test_complex.cpp, with input:
 
- *.prototxt weight_file(which is the .caffemodel file in the up-to-date Caffe) number_of_iterations input_images output_directory CPU/GPU(only support CPU)
+ ` *.prototxt weight_file(which is the .caffemodel file in the up-to-date Caffe) number_of_iterations input_images output_directory CPU/GPU(only support CPU) `
  
  for example:
  
- v0_proto.prototxt v0_weights.caffemodel 1 image_data.binaryproto result  CPU
+` v0_proto.prototxt v0_weights.caffemodel 1 image_data.binaryproto result  CPU`
  
   Make sure to create the result folder before test it
  
@@ -114,13 +114,15 @@ The test example is based on a complicated face landmark model, you can find the
 ## About the Grayscale Image Example(test_images.cpp)
 This test example is based on a complicated face landmark model, you can find the input files in the folder "grayscale_example". In this folder, there are both v2 and v0 models, you can also get the v0 model from v2 with codes in downgrade_proto.cpp. In order to test the model, directly run test_complex.cpp, with input:
 
- *.prototxt weight_file(which is the .caffemodel file in the up-to-date Caffe) number_of_iterations input_images output_directory CPU/GPU(only support CPU)
+ ` *.prototxt weight_file(which is the .caffemodel file in the up-to-date Caffe) input_images output_directory `
  
  for example:
  
- v0proto.prototxt v0weights.caffemodel 1 0002d5c7-cc03-4475-93bc-7c3c85650119.png result CPU
+ ` v0proto.prototxt v0weights.caffemodel 0002d5c7-cc03-4475-93bc-7c3c85650119.png result `
  
   Make sure to create the result folder before test it
+  
+  This example is different from the previous that I remove some inputs, now only 4 inputs left.
  
  
  The example shows how to read grayscale image to our test model.
