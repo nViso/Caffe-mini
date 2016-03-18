@@ -78,31 +78,28 @@ static void save_blobs_to_json(const string& fn, Blob<Dtype> *landmark, Blob<Dty
 
 int main(int argc, char** argv)
 {
-	if (argc < 5) {
-		LOG(ERROR) << "test_net net_proto pretrained_net_proto iterations inputbin output_dir"
-			<< " [CPU/GPU]";
+	if (argc < 4) {
+		LOG(ERROR) << "net_proto pretrained_net_proto inputbin output_dir";
 		return 0;
 	}
 
 	Caffe::set_phase(Caffe::TEST);
 
-	if (argc == 7 && strcmp(argv[6], "GPU") == 0) {
-		LOG(ERROR) << "Using GPU";
-		Caffe::set_mode(Caffe::GPU);
-	}
-	else {
-		LOG(ERROR) << "Using CPU";
-		Caffe::set_mode(Caffe::CPU);
-	}
+	// always use cpu mode
+	Caffe::set_mode(Caffe::CPU);
+
 
 	// load the .prototxt file
 	NetParameter test_net_param;
 	ReadProtoFromTextFile(argv[1], &test_net_param);
+	cout << "successfully load the prototxt" << endl;
 	Net<float> caffe_test_net(test_net_param);
+
 
 	//load the weights
 	NetParameter trained_net_param;
 	ReadProtoFromBinaryFile(argv[2], &trained_net_param);
+	cout << "successfully load the weights" << endl;
 
 	//check if the caffemodel confirm with caffe.proto (check if there exists unknown fields)
 	// change this part if you want to update the caffe.proto file
@@ -124,9 +121,8 @@ int main(int argc, char** argv)
 
 	// convert weights to test model
 	caffe_test_net.CopyTrainedLayersFrom(trained_net_param);
+	cout << "successfully convert weights to the model" << endl;
 
-	int total_iter = atoi(argv[3]);
-	LOG(ERROR) << "Running " << total_iter << " Iterations.";
 
 	//save layer, the output directory
 	char output_dir[1024];
@@ -164,7 +160,7 @@ int main(int argc, char** argv)
 	CHECK_NE(output_layer_idx_Pitch, -1);
 	CHECK_NE(output_layer_idx_Roll, -1);
 
-	LOG(INFO) << "Output layer: " << output_layer_idx_landmark;
+
 
 	// the output blob and data blob(input data)
 	Blob<float>* output_landmark = caffe_test_net.top_vecs()[output_layer_idx_landmark][0],
@@ -178,7 +174,7 @@ int main(int argc, char** argv)
 
 	//load the input image
 	Datum datum;
-	ReadGrayImageToDatum(argv[4], 1, 40, 40, &datum);
+	ReadGrayImageToDatum(argv[3], 1, 40, 40, &datum);
 
 	//get the blobproto
 	BlobProto blob_proto;
@@ -206,30 +202,28 @@ int main(int argc, char** argv)
 
 	cout << "success load the image" << endl;
 
-	for (int i = 0; i < total_iter; ++i)
-	{
+
+	const vector<Blob<float>*>& result =
+		caffe_test_net.Forward(caffe_test_net.input_blobs());
+
+	// save the file to json with the same name as the image
+	string input_path = argv[3];
+	size_t position_slash = input_path.find_last_of("/\\");
+	size_t position_point = input_path.find_last_of(".");
+	string output_name = input_path.substr(position_slash + 1,position_point-position_slash-1);
 
 
-		const vector<Blob<float>*>& result =
-			caffe_test_net.Forward(caffe_test_net.input_blobs());
+	// get the c string of output file name
+	char *c_name = new char[output_name.length() + 1];
+	strcpy(c_name, output_name.c_str());
 
-		// save the file to json with the same name as the image
-		string input_name = argv[4];
-		int size_of_name = input_name.size();
-		string output_name = input_name.substr(0, size_of_name - 4);
-
-		// get the c string of output file name
-		char *c_name = new char[output_name.length() + 1];
-		strcpy(c_name, output_name.c_str());
-
-		// save the result to the result directory
-		sprintf(output_dir, "%s/%s.json", argv[5], c_name);
+	// save the result to the result directory
+	sprintf(output_dir, "%s/%s.json", argv[4], c_name);
 
 
-		// save the result to json format
-		save_blobs_to_json(output_dir, output_landmark, output_Yaw, output_Pitch, output_Roll);
+	// save the result to json format
+	save_blobs_to_json(output_dir, output_landmark, output_Yaw, output_Pitch, output_Roll);
 
-	}
-	cout << "output is saved in " << argv[5] << " directory" << endl;
+	cout << "output is saved in " << argv[4] << " directory" << endl;
 	return 0;
 }
