@@ -105,11 +105,6 @@ The test example is based on a complicated face landmark model, you can find the
  
  The example also shows how to read v2 binaryproto file to our model.
  
-## Details About the Landmarks Detection Model
- 
- 
- 
- 
  
 ## About the Grayscale Image Example(test_images.cpp)
 This test example is based on a complicated face landmark model, you can find the input files in the folder "grayscale_example". In this folder, there are both v2 and v0 models, you can also get the v0 model from v2 with codes in downgrade_proto.cpp. In order to test the model, directly run test_complex.cpp, with input:
