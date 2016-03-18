@@ -27,8 +27,8 @@ This model computes the facial landmarks as well as the yaw, roll and pitch head
 -    the 37th layer is inner product layer "ip3_2" with 256 outputs, the 38th layer is the relu layer "relu3_2". The 39th layer is dropout layer called "drop3_2" with dropout ratio 0.5.
 -    the 40th layer is inner product layer "ip3_3" with 1 output, which is the roll angle.
 
-All these outputs are computed by the corresponding inner product layers. Among all the outputs, the landmark is computed by layer "ip0\_3", and it returns 64 float numbers which are the X,Y coordinates of 32 landmarks. The yaw is computed by layer "ip1\_3", while pitch is computed by
-"ip2\_3" and the roll is "ip3\_3". The architecture of this network is shown in models/v0proto.prototxt and the weights of this network are in models/v0weights.caffemodel.
+All these outputs are computed by the corresponding inner product layers. Among all the outputs, the landmark is computed by layer "ip0_3", and it returns 64 float numbers which are the X,Y coordinates of 32 landmarks. The yaw is computed by layer "ip1_3", while pitch is computed by
+"ip2_3" and the roll is "ip3_3". The architecture of this network is shown in models/v0proto.prototxt and the weights of this network are in models/v0weights.caffemodel.
 
 The details of how to get these outputs are in src/test_images.cpp.
 
