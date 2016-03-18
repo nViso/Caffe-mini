@@ -52,7 +52,7 @@ example input:
 
 in command line, if we are in mini_caffe_root folder:
 
-caffe-mini.exe models/v0proto.prototxt models/v0weights.caffemodel test/new_images/000d5ac6-6e40-4570-8c8b-1a7fd16c7bcc.png test/output
+` caffe-mini.exe models/v0proto.prototxt models/v0weights.caffemodel test/new_images/000d5ac6-6e40-4570-8c8b-1a7fd16c7bcc.png test/output `
 
 Remember to make sure all the paths exist before you run the file, including the folder which you store all the outputs.
 
@@ -65,8 +65,8 @@ The output contains information about the landmark and head poses(yaw, roll and 
 The input image should be 40*40, grayscale human face picture. You can find the example pictures in test/new_images.
 
 ## Test Example
-In the folder test/new_images, you can find the sample input images. You can also predict the landmarks and head poses to the folder test\output. The folder test/true_outputs contains the true values which you can compare with your own prediction. 
+In the folder test/new_images, you can find the sample input images. You can also predict the landmarks and head poses to the folder test/output. The folder test/true_outputs contains the true values which you can compare with your own prediction. 
 
 We also offer one script to check if your prediction is correct, it is in test/true_outputs, you have to cd to this folder in order to execute it. After you cd to this folder just type this in your command line:
 
-python test_results.py path/to/your/output/folder
+` python test_results.py path/to/your/output/folder   `
