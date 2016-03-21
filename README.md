@@ -82,7 +82,7 @@ Right click on your project's entry in solution explorer,
 
  
 
-## About the Test Example
+## Simple Test Example
 The test example is based on the Lenet network and mnist data set, in order to test this model, just input:
 
  *.prototxt weight_file(which is the .caffemodel file in the up-to-date Caffe) number_of_iterations input_images output_directory CPU/GPU(only support CPU)
@@ -93,7 +93,7 @@ The test example is based on the Lenet network and mnist data set, in order to t
  
  Make sure to create the result folder before test it
  
-## About the Complex Test Example
+## Complex Test Example
 The test example is based on a complicated face landmark model, you can find the input files in the folder "complex_example". In this folder, there are both v2 and v0 models, you can also get the v0 model from v2 with codes in downgrade_proto.cpp. In order to test the model, directly run test_complex.cpp, with input:
 
  ` *.prototxt weight_file(which is the .caffemodel file in the up-to-date Caffe) number_of_iterations input_images output_directory CPU/GPU(only support CPU) `
@@ -108,7 +108,7 @@ The test example is based on a complicated face landmark model, you can find the
  The example also shows how to read v2 binaryproto file to our model.
  
  
-## About the Grayscale Image Example(test_images.cpp)
+## Grayscale Image Example(test_images.cpp)
 This test example is based on a complicated face landmark model, you can find the input files in the folder "grayscale_example". In this folder, there are both v2 and v0 models, you can also get the v0 model from v2 with codes in downgrade_proto.cpp. In order to test the model, directly run test_complex.cpp, with input:
 
  ` *.prototxt weight_file(which is the .caffemodel file in the up-to-date Caffe) input_images output_directory `
@@ -123,6 +123,10 @@ This test example is based on a complicated face landmark model, you can find th
  
  
  The example shows how to read grayscale image to our test model.
+
+## Mini-Caffe Root
+
+This folder contains the models and .exe file for landmark detection application with this Mini-caffe. Details are explained in the README.md of this folder.
  
 ## Future Work
 
