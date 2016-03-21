@@ -15,7 +15,9 @@ You need first download the opencv from official webside, and then cmake it acco
 
 http://opencv-srf.blogspot.ch/2013/05/installing-configuring-opencv-with-vs.html
 
-Note: instead of vc11 you need vc14 for visual studio 2015, modify this in all the pathes. As the bin folder contains both debug and release, you should add 2 paths to the PATH environment variable, they are %OPENCV_DIR%\x86\vc14\bin\Debug and %OPENCV_DIR%\x86\vc14\bin\Release, rather than the %OPENCV_DIR%\x86\vc11\bin in the above guidance. What's more, in the visual studio, in debug mode, add $(OPENCV_DIR)\x86\vc14\lib\Debug and list the *.libs in the Debug folder. In release mode, add $(OPENCV_DIR)\x86\vc14\lib\Release and list the *.libs in the Release folder(the linker general and input part). You can add a new filder called "opencv2" and copy all the files in opencv\include\opencv2 to this folder.
+Note: instead of vc11 you need vc14 for visual studio 2015, modify this in all the pathes. As the bin folder contains both debug and release, you should add 2 paths to the PATH environment variable, they are 
+`%OPENCV_DIR%\x86\vc14\bin\Debug and %OPENCV_DIR%\x86\vc14\bin\Release`,
+ rather than the `%OPENCV_DIR%\x86\vc11\bin` in the above guidance. What's more, in the visual studio, in debug mode, add `$(OPENCV_DIR)\x86\vc14\lib\Debug and list the *.libs in the Debug folder`. In release mode, add `$(OPENCV_DIR)\x86\vc14\lib\Release` and list the *.libs in the Release folder(the linker general and input part). You can add a new filder called "opencv2" and copy all the files in opencv\include\opencv2 to this folder.
 
 Now you have already set all the dependence, if visual studio can not open head files in opencv2, close visual studio and open it again, remember to save the changes before close it.
 
