@@ -35,6 +35,9 @@ The details of how to get these outputs are in src/test_images.cpp.
 ## The Bin Folder
 The bin folder contains binary files both in bebug and release model, which may help you deal with program problems.
 
+## The SRC Folder
+In the src folder, there are source code of caffe itself and the dependence librarys, which are eigen and protobuf. If you want to compile caffe in your own machine, you still need the opencv to load images. If you just want to use it, directly run the .exe file, you don't need compile it again. You can check [this page](https://github.com/nViso/Caffe-mini) for details.
+
 ##How to Use 
 
 There are 2 different versions of runable files, one is debug version (in the folder Debug/caffe-mini.exe) and the other is release version(in the folder Release/caffe-mini.exe). The release version is faster since it would not help you debug the program. 
