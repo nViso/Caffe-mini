@@ -1,0 +1,698 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of zero_copy_stream_impl.cc will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are ..\..\..\..\..\github\Caffe-mini\google\protobuf\io\zero_copy_stream_impl.cc, ..\..\..\..\..\github\Caffe-mini\google\protobuf\zero_copy_stream_impl.cc.
+  test_images.cpp
+d:\workspace\projects\tempfiles\vs2015\caffe-mini\caffe-mini\test_images.cpp(138): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\projects\tempfiles\vs2015\caffe-mini\caffe-mini\test_images.cpp(196): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1600): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1599): note: while compiling class template member function 'void std::vector<std::shared_ptr<caffe::Layer<Dtype>>,std::allocator<_Ty>>::_Destroy(std::shared_ptr<caffe::Layer<Dtype>> *,std::shared_ptr<caffe::Layer<Dtype>> *)'
+          with
+          [
+              Dtype=float,
+              _Ty=std::shared_ptr<caffe::Layer<float>>
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1659): note: see reference to function template instantiation 'void std::vector<std::shared_ptr<caffe::Layer<Dtype>>,std::allocator<_Ty>>::_Destroy(std::shared_ptr<caffe::Layer<Dtype>> *,std::shared_ptr<caffe::Layer<Dtype>> *)' being compiled
+          with
+          [
+              Dtype=float,
+              _Ty=std::shared_ptr<caffe::Layer<float>>
+          ]
+  d:\workspace\github\caffe-mini\caffe\net.hpp(95): note: see reference to class template instantiation 'std::vector<std::shared_ptr<caffe::Layer<Dtype>>,std::allocator<_Ty>>' being compiled
+          with
+          [
+              Dtype=float,
+              _Ty=std::shared_ptr<caffe::Layer<float>>
+          ]
+  d:\workspace\projects\tempfiles\vs2015\caffe-mini\caffe-mini\test_images.cpp(96): note: see reference to class template instantiation 'caffe::Net<float>' being compiled
+  test_complex.cpp
+  image_io.cpp
+  downgrade_proto.cpp
+d:\workspace\projects\tempfiles\vs2015\caffe-mini\caffe-mini\downgrade_proto.cpp(71): warning C4244: 'argument': conversion from 'google::protobuf::int64' to 'google::protobuf::int32', possible loss of data
+d:\workspace\projects\tempfiles\vs2015\caffe-mini\caffe-mini\downgrade_proto.cpp(75): warning C4244: 'argument': conversion from 'google::protobuf::int64' to 'google::protobuf::int32', possible loss of data
+d:\workspace\projects\tempfiles\vs2015\caffe-mini\caffe-mini\downgrade_proto.cpp(76): warning C4244: 'argument': conversion from 'google::protobuf::int64' to 'google::protobuf::int32', possible loss of data
+d:\workspace\projects\tempfiles\vs2015\caffe-mini\caffe-mini\downgrade_proto.cpp(80): warning C4244: 'argument': conversion from 'google::protobuf::int64' to 'google::protobuf::int32', possible loss of data
+d:\workspace\projects\tempfiles\vs2015\caffe-mini\caffe-mini\downgrade_proto.cpp(81): warning C4244: 'argument': conversion from 'google::protobuf::int64' to 'google::protobuf::int32', possible loss of data
+d:\workspace\projects\tempfiles\vs2015\caffe-mini\caffe-mini\downgrade_proto.cpp(82): warning C4244: 'argument': conversion from 'google::protobuf::int64' to 'google::protobuf::int32', possible loss of data
+d:\workspace\projects\tempfiles\vs2015\caffe-mini\caffe-mini\downgrade_proto.cpp(86): warning C4244: 'argument': conversion from 'google::protobuf::int64' to 'google::protobuf::int32', possible loss of data
+d:\workspace\projects\tempfiles\vs2015\caffe-mini\caffe-mini\downgrade_proto.cpp(87): warning C4244: 'argument': conversion from 'google::protobuf::int64' to 'google::protobuf::int32', possible loss of data
+d:\workspace\projects\tempfiles\vs2015\caffe-mini\caffe-mini\downgrade_proto.cpp(88): warning C4244: 'argument': conversion from 'google::protobuf::int64' to 'google::protobuf::int32', possible loss of data
+d:\workspace\projects\tempfiles\vs2015\caffe-mini\caffe-mini\downgrade_proto.cpp(89): warning C4244: 'argument': conversion from 'google::protobuf::int64' to 'google::protobuf::int32', possible loss of data
+d:\workspace\projects\tempfiles\vs2015\caffe-mini\caffe-mini\downgrade_proto.cpp(132): warning C4244: 'argument': conversion from 'google::protobuf::int64' to 'google::protobuf::int32', possible loss of data
+d:\workspace\projects\tempfiles\vs2015\caffe-mini\caffe-mini\downgrade_proto.cpp(430): warning C4244: 'initializing': conversion from 'google::protobuf::int64' to 'google::protobuf::int32', possible loss of data
+  downgrade_example.cpp
+  new_caffe.pb.cc
+  zero_copy_stream_impl.cc
+d:\workspace\github\caffe-mini\google\protobuf\zero_copy_stream_impl.cc(304): warning C4244: 'initializing': conversion from 'std::streamsize' to 'int', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\zero_copy_stream_impl.cc(391): warning C4244: '=': conversion from 'google::protobuf::int64' to 'int', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\zero_copy_stream_impl.cc(419): warning C4244: 'argument': conversion from 'google::protobuf::int64' to 'int', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\zero_copy_stream_impl.cc(429): warning C4244: '+=': conversion from 'google::protobuf::int64' to 'int', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\zero_copy_stream_impl.cc(436): warning C4244: 'argument': conversion from 'google::protobuf::int64' to 'int', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\zero_copy_stream_impl.cc(447): warning C4244: 'argument': conversion from 'google::protobuf::int64' to 'int', possible loss of data
+  wire_format_lite.cc
+  wire_format.cc
+d:\workspace\github\caffe-mini\google\protobuf\wire_format.cc(719): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\wire_format.cc(889): warning C4018: '<': signed/unsigned mismatch
+  unknown_field_set.cc
+d:\workspace\github\caffe-mini\google\protobuf\unknown_field_set.cc(56): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\unknown_field_set.cc(72): warning C4018: '<': signed/unsigned mismatch
+  text_format.cc
+d:\workspace\github\caffe-mini\google\protobuf\text_format.cc(423): warning C4800: 'google::protobuf::uint64': forcing value to bool 'true' or 'false' (performance warning)
+d:\workspace\github\caffe-mini\google\protobuf\text_format.cc(455): warning C4244: 'argument': conversion from 'google::protobuf::int64' to 'int', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\text_format.cc(718): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\text_format.cc(946): warning C4018: '<': signed/unsigned mismatch
+  substitute.cc
+  strutil.cc
+d:\workspace\github\caffe-mini\google\protobuf\stubs\strutil.cc(591): warning C4244: '=': conversion from 'google::protobuf::int64' to 'char', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\stubs\strutil.cc(833): warning C4244: '=': conversion from 'google::protobuf::uint64' to 'google::protobuf::uint32', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\stubs\strutil.cc(913): warning C4244: 'argument': conversion from '__int64' to 'google::protobuf::int32', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\stubs\strutil.cc(920): warning C4244: 'argument': conversion from 'unsigned __int64' to 'google::protobuf::uint32', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\stubs\strutil.cc(1056): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  once.cc
+  gcommon.cc
+d:\workspace\github\caffe-mini\google\protobuf\stubs\gcommon.cc(359): warning C4018: '<': signed/unsigned mismatch
+  structurally_valid.cc
+  repeated_field.cc
+  reflection_ops.cc
+d:\workspace\github\caffe-mini\google\protobuf\reflection_ops.cc(62): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\reflection_ops.cc(128): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\reflection_ops.cc(151): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\reflection_ops.cc(181): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\reflection_ops.cc(236): warning C4018: '<': signed/unsigned mismatch
+  message_lite.cc
+  message.cc
+  Generating Code...
+  Compiling...
+  zero_copy_stream_impl_lite.cc
+d:\workspace\github\caffe-mini\google\protobuf\io\zero_copy_stream_impl_lite.cc(158): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\io\zero_copy_stream_impl_lite.cc(178): warning C4018: '<=': signed/unsigned mismatch
+  zero_copy_stream_impl.cc
+d:\workspace\github\caffe-mini\google\protobuf\io\zero_copy_stream_impl.cc(304): warning C4244: 'initializing': conversion from 'std::streamsize' to 'int', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\io\zero_copy_stream_impl.cc(391): warning C4244: '=': conversion from 'google::protobuf::int64' to 'int', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\io\zero_copy_stream_impl.cc(419): warning C4244: 'argument': conversion from 'google::protobuf::int64' to 'int', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\io\zero_copy_stream_impl.cc(429): warning C4244: '+=': conversion from 'google::protobuf::int64' to 'int', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\io\zero_copy_stream_impl.cc(436): warning C4244: 'argument': conversion from 'google::protobuf::int64' to 'int', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\io\zero_copy_stream_impl.cc(447): warning C4244: 'argument': conversion from 'google::protobuf::int64' to 'int', possible loss of data
+  zero_copy_stream.cc
+  tokenizer.cc
+  coded_stream.cc
+  generated_message_util.cc
+  generated_message_reflection.cc
+d:\workspace\github\caffe-mini\google\protobuf\generated_message_reflection.cc(1149): warning C4800: 'google::protobuf::uint32': forcing value to bool 'true' or 'false' (performance warning)
+  extension_set_heavy.cc
+  extension_set.cc
+  dynamic_message.cc
+  descriptor_database.cc
+d:\workspace\github\caffe-mini\google\protobuf\descriptor_database.cc(303): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\descriptor_database.cc(441): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\descriptor_database.cc(464): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\descriptor_database.cc(475): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\descriptor_database.cc(498): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\descriptor_database.cc(525): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\descriptor_database.cc(237): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\google\protobuf\descriptor_database.cc(236): note: while compiling class template member function 'bool google::protobuf::SimpleDescriptorDatabase::DescriptorIndex<const google::protobuf::FileDescriptorProto *>::ValidateSymbolName(const std::string &)'
+  d:\workspace\github\caffe-mini\google\protobuf\descriptor_database.cc(93): note: see reference to function template instantiation 'bool google::protobuf::SimpleDescriptorDatabase::DescriptorIndex<const google::protobuf::FileDescriptorProto *>::ValidateSymbolName(const std::string &)' being compiled
+  d:\workspace\github\caffe-mini\google\protobuf\descriptor_database.cc(87): note: while compiling class template member function 'bool google::protobuf::SimpleDescriptorDatabase::DescriptorIndex<const google::protobuf::FileDescriptorProto *>::AddSymbol(const std::string &,Value)'
+          with
+          [
+              Value=const google::protobuf::FileDescriptorProto *
+          ]
+  d:\workspace\github\caffe-mini\google\protobuf\descriptor_database.cc(68): note: see reference to function template instantiation 'bool google::protobuf::SimpleDescriptorDatabase::DescriptorIndex<const google::protobuf::FileDescriptorProto *>::AddSymbol(const std::string &,Value)' being compiled
+          with
+          [
+              Value=const google::protobuf::FileDescriptorProto *
+          ]
+  d:\workspace\github\caffe-mini\google\protobuf\descriptor_database.cc(55): note: while compiling class template member function 'bool google::protobuf::SimpleDescriptorDatabase::DescriptorIndex<const google::protobuf::FileDescriptorProto *>::AddFile(const google::protobuf::FileDescriptorProto &,Value)'
+          with
+          [
+              Value=const google::protobuf::FileDescriptorProto *
+          ]
+  d:\workspace\github\caffe-mini\google\protobuf\descriptor_database.cc(264): note: see reference to function template instantiation 'bool google::protobuf::SimpleDescriptorDatabase::DescriptorIndex<const google::protobuf::FileDescriptorProto *>::AddFile(const google::protobuf::FileDescriptorProto &,Value)' being compiled
+          with
+          [
+              Value=const google::protobuf::FileDescriptorProto *
+          ]
+  d:\workspace\github\caffe-mini\google\protobuf\descriptor_database.h(250): note: see reference to class template instantiation 'google::protobuf::SimpleDescriptorDatabase::DescriptorIndex<const google::protobuf::FileDescriptorProto *>' being compiled
+  descriptor.pb.cc
+  descriptor.cc
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(134): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(492): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(516): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(519): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(522): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(536): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(989): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(1498): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(1534): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(2607): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(2623): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(2728): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(2731): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(3032): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(4149): warning C4244: 'argument': conversion from 'google::protobuf::uint64' to 'google::protobuf::int32', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(4159): warning C4244: 'argument': conversion from 'google::protobuf::int64' to 'google::protobuf::int32', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(4196): warning C4244: 'argument': conversion from 'google::protobuf::uint64' to 'google::protobuf::uint32', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(4218): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(4220): warning C4244: '=': conversion from 'google::protobuf::uint64' to 'float', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(4222): warning C4244: '=': conversion from 'google::protobuf::int64' to 'float', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(4237): warning C4244: '=': conversion from 'google::protobuf::uint64' to 'double', possible loss of data
+d:\workspace\github\caffe-mini\google\protobuf\descriptor.cc(4239): warning C4244: '=': conversion from 'google::protobuf::int64' to 'double', possible loss of data
+  verification_loss.cpp
+d:\workspace\github\caffe-mini\caffe\verification_loss.cpp(43): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  d:\workspace\github\caffe-mini\caffe\verification_loss.cpp(16): note: while compiling class template member function 'float caffe::VerificationLossLayer<float>::CalcThreshold(bool)'
+  d:\workspace\github\caffe-mini\caffe\verification_loss.cpp(162): note: see reference to class template instantiation 'caffe::VerificationLossLayer<float>' being compiled
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(612): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  tanh_layer.cpp
+d:\workspace\github\caffe-mini\caffe\tanh_layer.cpp(21): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(22): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(46): note: see reference to class template instantiation 'caffe::NeuronLayer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\tanh_layer.cpp(71): note: see reference to class template instantiation 'caffe::TanHLayer<float>' being compiled
+d:\workspace\github\caffe-mini\caffe\tanh_layer.cpp(46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  d:\workspace\github\caffe-mini\caffe\tanh_layer.cpp(40): note: while compiling class template member function 'void caffe::TanHLayer<double>::Forward_cpu(const std::vector<caffe::Blob<Dtype> *,std::allocator<_Ty>> &,std::vector<_Ty,std::allocator<_Ty>> *)'
+          with
+          [
+              Dtype=double,
+              _Ty=caffe::Blob<double> *
+          ]
+  d:\workspace\github\caffe-mini\caffe\tanh_layer.cpp(71): note: see reference to class template instantiation 'caffe::TanHLayer<double>' being compiled
+  syncedmem.cpp
+  split_layer.cpp
+d:\workspace\github\caffe-mini\caffe\split_layer.cpp(17): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\split_layer.cpp(13): note: while compiling class template member function 'void caffe::SplitLayer<float>::SetUp(const std::vector<caffe::Blob<float> *,std::allocator<_Ty>> &,std::vector<_Ty,std::allocator<_Ty>> *)'
+          with
+          [
+              _Ty=caffe::Blob<float> *
+          ]
+  d:\workspace\github\caffe-mini\caffe\split_layer.cpp(65): note: see reference to class template instantiation 'caffe::SplitLayer<float>' being compiled
+d:\workspace\github\caffe-mini\caffe\split_layer.cpp(34): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\split_layer.cpp(32): note: while compiling class template member function 'void caffe::SplitLayer<float>::Forward_cpu(const std::vector<caffe::Blob<float> *,std::allocator<_Ty>> &,std::vector<_Ty,std::allocator<_Ty>> *)'
+          with
+          [
+              _Ty=caffe::Blob<float> *
+          ]
+d:\workspace\github\caffe-mini\caffe\split_layer.cpp(56): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\split_layer.cpp(45): note: while compiling class template member function 'float caffe::SplitLayer<float>::Backward_cpu(const std::vector<caffe::Blob<float> *,std::allocator<_Ty>> &,const bool,std::vector<_Ty,std::allocator<_Ty>> *)'
+          with
+          [
+              _Ty=caffe::Blob<float> *
+          ]
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(142): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  softmax_loss_layer.cpp
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(590): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\softmax_loss_layer.cpp(58): note: see reference to class template instantiation 'caffe::SoftmaxWithLossLayer<float>' being compiled
+  softmax_layer.cpp
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(527): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\softmax_layer.cpp(86): note: see reference to class template instantiation 'caffe::SoftmaxLayer<float>' being compiled
+  sigmoid_layer.cpp
+d:\workspace\github\caffe-mini\caffe\sigmoid_layer.cpp(39): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  d:\workspace\github\caffe-mini\caffe\sigmoid_layer.cpp(31): note: while compiling class template member function 'float caffe::SigmoidLayer<float>::Backward_cpu(const std::vector<caffe::Blob<float> *,std::allocator<_Ty>> &,const bool,std::vector<_Ty,std::allocator<_Ty>> *)'
+          with
+          [
+              _Ty=caffe::Blob<float> *
+          ]
+  d:\workspace\github\caffe-mini\caffe\sigmoid_layer.cpp(45): note: see reference to class template instantiation 'caffe::SigmoidLayer<float>' being compiled
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(22): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(60): note: see reference to class template instantiation 'caffe::NeuronLayer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+d:\workspace\github\caffe-mini\caffe\sigmoid_layer.cpp(14): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  d:\workspace\github\caffe-mini\caffe\sigmoid_layer.cpp(24): note: see reference to function template instantiation 'Dtype caffe::sigmoid<Dtype>(Dtype)' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\sigmoid_layer.cpp(19): note: while compiling class template member function 'void caffe::SigmoidLayer<float>::Forward_cpu(const std::vector<caffe::Blob<float> *,std::allocator<_Ty>> &,std::vector<_Ty,std::allocator<_Ty>> *)'
+          with
+          [
+              _Ty=caffe::Blob<float> *
+          ]
+  Generating Code...
+  Compiling...
+  relu_layer.cpp
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(22): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(32): note: see reference to class template instantiation 'caffe::NeuronLayer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\relu_layer.cpp(41): note: see reference to class template instantiation 'caffe::ReLULayer<float>' being compiled
+  raw_image_layer.cpp
+d:\workspace\github\caffe-mini\caffe\raw_image_layer.cpp(20): warning C4812: obsolete declaration style: please use 'caffe::RawImageLayer<Dtype>::~RawImageLayer' instead
+d:\workspace\github\caffe-mini\caffe\raw_image_layer.cpp(20): warning C4812: obsolete declaration style: please use 'caffe::RawImageLayer<float>::~RawImageLayer' instead
+  d:\workspace\github\caffe-mini\caffe\raw_image_layer.cpp(20): note: while compiling class template member function 'caffe::RawImageLayer<float>::~RawImageLayer(void)'
+  d:\workspace\github\caffe-mini\caffe\raw_image_layer.cpp(79): note: see reference to function template instantiation 'caffe::RawImageLayer<float>::~RawImageLayer(void)' being compiled
+  d:\workspace\github\caffe-mini\caffe\raw_image_layer.cpp(76): note: see reference to class template instantiation 'caffe::RawImageLayer<float>' being compiled
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(477): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+d:\workspace\github\caffe-mini\caffe\raw_image_layer.cpp(20): warning C4812: obsolete declaration style: please use 'caffe::RawImageLayer<double>::~RawImageLayer' instead
+  d:\workspace\github\caffe-mini\caffe\raw_image_layer.cpp(20): note: while compiling class template member function 'caffe::RawImageLayer<double>::~RawImageLayer(void)'
+  d:\workspace\github\caffe-mini\caffe\raw_image_layer.cpp(79): note: see reference to function template instantiation 'caffe::RawImageLayer<double>::~RawImageLayer(void)' being compiled
+  d:\workspace\github\caffe-mini\caffe\raw_image_layer.cpp(76): note: see reference to class template instantiation 'caffe::RawImageLayer<double>' being compiled
+  pooling_layer.cpp
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(268): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\pooling_layer.cpp(195): note: see reference to class template instantiation 'caffe::PoolingLayer<float>' being compiled
+  padding_layer.cpp
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(198): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\padding_layer.cpp(72): note: see reference to class template instantiation 'caffe::PaddingLayer<float>' being compiled
+  neuron_layer.cpp
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(22): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\neuron_layer.cpp(23): note: see reference to class template instantiation 'caffe::NeuronLayer<float>' being compiled
+  net.cpp
+d:\workspace\github\caffe-mini\caffe\net.cpp(124): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\net.cpp(33): note: while compiling class template member function 'void caffe::Net<float>::Init(const caffe::NetParameter &)'
+  d:\workspace\github\caffe-mini\caffe\net.cpp(29): note: see reference to function template instantiation 'void caffe::Net<float>::Init(const caffe::NetParameter &)' being compiled
+  d:\workspace\github\caffe-mini\caffe\net.cpp(368): note: see reference to class template instantiation 'caffe::Net<float>' being compiled
+d:\workspace\github\caffe-mini\caffe\net.cpp(152): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\caffe\net.cpp(211): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\net.cpp(210): note: while compiling class template member function 'const std::vector<caffe::Blob<Dtype> *,std::allocator<_Ty>> &caffe::Net<Dtype>::ForwardPrefilled(void)'
+          with
+          [
+              Dtype=float,
+              _Ty=caffe::Blob<float> *
+          ]
+d:\workspace\github\caffe-mini\caffe\net.cpp(242): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\net.cpp(230): note: while compiling class template member function 'std::string caffe::Net<float>::Forward(const std::string &)'
+d:\workspace\github\caffe-mini\caffe\net.cpp(222): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\net.cpp(220): note: while compiling class template member function 'const std::vector<caffe::Blob<Dtype> *,std::allocator<_Ty>> &caffe::Net<Dtype>::Forward(const std::vector<_Ty,std::allocator<_Ty>> &)'
+          with
+          [
+              Dtype=float,
+              _Ty=caffe::Blob<float> *
+          ]
+  d:\workspace\github\caffe-mini\caffe\net.hpp(48): note: see reference to function template instantiation 'const std::vector<caffe::Blob<Dtype> *,std::allocator<_Ty>> &caffe::Net<Dtype>::Forward(const std::vector<_Ty,std::allocator<_Ty>> &)' being compiled
+          with
+          [
+              Dtype=float,
+              _Ty=caffe::Blob<float> *
+          ]
+d:\workspace\github\caffe-mini\caffe\net.cpp(269): warning C4018: '<=': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\net.cpp(266): note: while compiling class template member function 'float caffe::Net<float>::BackwardBetween(int,int)'
+d:\workspace\github\caffe-mini\caffe\net.cpp(363): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\net.cpp(362): note: while compiling class template member function 'void caffe::Net<float>::Update(void)'
+d:\workspace\github\caffe-mini\caffe\net.cpp(285): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\net.cpp(283): note: while compiling class template member function 'void caffe::Net<float>::CopyLayersFrom(const caffe::Net<float> &,bool)'
+d:\workspace\github\caffe-mini\caffe\net.cpp(292): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\caffe\net.cpp(322): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\net.cpp(303): note: while compiling class template member function 'void caffe::Net<float>::CopyTrainedLayersFrom(const caffe::NetParameter &)'
+  d:\workspace\github\caffe-mini\caffe\net.cpp(336): note: see reference to function template instantiation 'void caffe::Net<float>::CopyTrainedLayersFrom(const caffe::NetParameter &)' being compiled
+d:\workspace\github\caffe-mini\caffe\net.cpp(344): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\net.cpp(340): note: while compiling class template member function 'void caffe::Net<float>::ToProto(caffe::NetParameter *,bool)'
+d:\workspace\github\caffe-mini\caffe\net.cpp(348): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\caffe\net.cpp(350): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\caffe\net.cpp(353): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\caffe\net.cpp(174): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\net.cpp(172): note: while compiling class template member function 'void caffe::Net<float>::GetLearningRateAndWeightDecay(void)'
+  d:\workspace\github\caffe-mini\caffe\net.cpp(165): note: see reference to function template instantiation 'void caffe::Net<float>::GetLearningRateAndWeightDecay(void)' being compiled
+d:\workspace\github\caffe-mini\caffe\net.cpp(176): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\caffe\net.cpp(182): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\caffe\net.cpp(188): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\caffe\net.cpp(196): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\caffe\net.cpp(202): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\net.cpp(357): note: see reference to function template instantiation 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1600): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1599): note: while compiling class template member function 'void std::vector<std::shared_ptr<caffe::Layer<Dtype>>,std::allocator<_Ty>>::_Destroy(std::shared_ptr<caffe::Layer<Dtype>> *,std::shared_ptr<caffe::Layer<Dtype>> *)'
+          with
+          [
+              Dtype=float,
+              _Ty=std::shared_ptr<caffe::Layer<float>>
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(1659): note: see reference to function template instantiation 'void std::vector<std::shared_ptr<caffe::Layer<Dtype>>,std::allocator<_Ty>>::_Destroy(std::shared_ptr<caffe::Layer<Dtype>> *,std::shared_ptr<caffe::Layer<Dtype>> *)' being compiled
+          with
+          [
+              Dtype=float,
+              _Ty=std::shared_ptr<caffe::Layer<float>>
+          ]
+  d:\workspace\github\caffe-mini\caffe\net.hpp(95): note: see reference to class template instantiation 'std::vector<std::shared_ptr<caffe::Layer<Dtype>>,std::allocator<_Ty>>' being compiled
+          with
+          [
+              Dtype=float,
+              _Ty=std::shared_ptr<caffe::Layer<float>>
+          ]
+  math_functions.cpp
+d:\workspace\github\caffe-mini\caffe\math_functions.cpp(362): warning C4244: 'argument': conversion from 'const double' to 'const float', possible loss of data
+  lrn_layer.cpp
+d:\workspace\github\caffe-mini\caffe\lrn_layer.cpp(92): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  d:\workspace\github\caffe-mini\caffe\lrn_layer.cpp(79): note: while compiling class template member function 'float caffe::LRNLayer<float>::Backward_cpu(const std::vector<caffe::Blob<float> *,std::allocator<_Ty>> &,const bool,std::vector<_Ty,std::allocator<_Ty>> *)'
+          with
+          [
+              _Ty=caffe::Blob<float> *
+          ]
+  d:\workspace\github\caffe-mini\caffe\lrn_layer.cpp(132): note: see reference to class template instantiation 'caffe::LRNLayer<float>' being compiled
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(221): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  loss_layer.cpp
+d:\workspace\github\caffe-mini\caffe\loss_layer.cpp(17): warning C4305: 'initializing': truncation from 'double' to 'float'
+d:\workspace\github\caffe-mini\caffe\loss_layer.cpp(47): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  d:\workspace\github\caffe-mini\caffe\loss_layer.cpp(35): note: while compiling class template member function 'float caffe::MultinomialLogisticLossLayer<float>::Backward_cpu(const std::vector<caffe::Blob<float> *,std::allocator<_Ty>> &,const bool,std::vector<_Ty,std::allocator<_Ty>> *)'
+          with
+          [
+              _Ty=caffe::Blob<float> *
+          ]
+  d:\workspace\github\caffe-mini\caffe\loss_layer.cpp(220): note: see reference to class template instantiation 'caffe::MultinomialLogisticLossLayer<float>' being compiled
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(548): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  layer_factory.cpp
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<float>::ToProto(caffe::LayerParameter *,bool)'
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(678): note: see reference to class template instantiation 'caffe::Layer<float>' being compiled
+  d:\workspace\github\caffe-mini\caffe\layer_factory.cpp(23): note: see reference to class template instantiation 'caffe::AccuracyLayer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\layer_factory.cpp(91): note: see reference to function template instantiation 'caffe::Layer<float> *caffe::GetLayer<float>(const caffe::LayerParameter &)' being compiled
+  io.cpp
+  insert_splits.cpp
+  inner_product_layer.cpp
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(176): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\inner_product_layer.cpp(100): note: see reference to class template instantiation 'caffe::InnerProductLayer<float>' being compiled
+  im2col_layer.cpp
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(247): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\im2col_layer.cpp(51): note: see reference to class template instantiation 'caffe::Im2colLayer<float>' being compiled
+  im2col.cpp
+  flatten_layer.cpp
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(159): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\flatten_layer.cpp(41): note: see reference to class template instantiation 'caffe::FlattenLayer<float>' being compiled
+  dropout_layer.cpp
+d:\workspace\github\caffe-mini\caffe\dropout_layer.cpp(22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  d:\workspace\github\caffe-mini\caffe\dropout_layer.cpp(15): note: while compiling class template member function 'void caffe::DropoutLayer<float>::SetUp(const std::vector<caffe::Blob<float> *,std::allocator<_Ty>> &,std::vector<_Ty,std::allocator<_Ty>> *)'
+          with
+          [
+              _Ty=caffe::Blob<float> *
+          ]
+  d:\workspace\github\caffe-mini\caffe\dropout_layer.cpp(67): note: see reference to class template instantiation 'caffe::DropoutLayer<float>' being compiled
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(22): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(90): note: see reference to class template instantiation 'caffe::NeuronLayer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  dropout_group_layer.cpp
+d:\workspace\github\caffe-mini\caffe\dropout_group_layer.cpp(27): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  d:\workspace\github\caffe-mini\caffe\dropout_group_layer.cpp(15): note: while compiling class template member function 'void caffe::DropoutGroupLayer<float>::SetUp(const std::vector<caffe::Blob<float> *,std::allocator<_Ty>> &,std::vector<_Ty,std::allocator<_Ty>> *)'
+          with
+          [
+              _Ty=caffe::Blob<float> *
+          ]
+  d:\workspace\github\caffe-mini\caffe\dropout_group_layer.cpp(170): note: see reference to class template instantiation 'caffe::DropoutGroupLayer<float>' being compiled
+d:\workspace\github\caffe-mini\caffe\dropout_group_layer.cpp(75): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\dropout_group_layer.cpp(53): note: while compiling class template member function 'void caffe::DropoutGroupLayer<float>::UpscaleMaskFrom(caffe::DropoutGroupLayer<float> *)'
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(22): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(110): note: see reference to class template instantiation 'caffe::NeuronLayer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  conv_layer.cpp
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(292): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\conv_layer.cpp(225): note: see reference to class template instantiation 'caffe::ConvolutionLayer<float>' being compiled
+  concat_layer.cpp
+d:\workspace\github\caffe-mini\caffe\concat_layer.cpp(28): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\concat_layer.cpp(13): note: while compiling class template member function 'void caffe::ConcatLayer<float>::SetUp(const std::vector<caffe::Blob<float> *,std::allocator<_Ty>> &,std::vector<_Ty,std::allocator<_Ty>> *)'
+          with
+          [
+              _Ty=caffe::Blob<float> *
+          ]
+  d:\workspace\github\caffe-mini\caffe\concat_layer.cpp(106): note: see reference to class template instantiation 'caffe::ConcatLayer<float>' being compiled
+d:\workspace\github\caffe-mini\caffe\concat_layer.cpp(50): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\concat_layer.cpp(46): note: while compiling class template member function 'void caffe::ConcatLayer<float>::Forward_cpu(const std::vector<caffe::Blob<float> *,std::allocator<_Ty>> &,std::vector<_Ty,std::allocator<_Ty>> *)'
+          with
+          [
+              _Ty=caffe::Blob<float> *
+          ]
+d:\workspace\github\caffe-mini\caffe\concat_layer.cpp(58): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\caffe\concat_layer.cpp(80): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\concat_layer.cpp(76): note: while compiling class template member function 'float caffe::ConcatLayer<float>::Backward_cpu(const std::vector<caffe::Blob<float> *,std::allocator<_Ty>> &,const bool,std::vector<_Ty,std::allocator<_Ty>> *)'
+          with
+          [
+              _Ty=caffe::Blob<float> *
+          ]
+d:\workspace\github\caffe-mini\caffe\concat_layer.cpp(89): warning C4018: '<': signed/unsigned mismatch
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(329): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  Generating Code...
+  Compiling...
+  common.cpp
+  caffe.pb.cc
+  bnll_layer.cpp
+d:\workspace\github\caffe-mini\caffe\bnll_layer.cpp(24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  d:\workspace\github\caffe-mini\caffe\bnll_layer.cpp(17): note: while compiling class template member function 'void caffe::BNLLLayer<float>::Forward_cpu(const std::vector<caffe::Blob<float> *,std::allocator<_Ty>> &,std::vector<_Ty,std::allocator<_Ty>> *)'
+          with
+          [
+              _Ty=caffe::Blob<float> *
+          ]
+  d:\workspace\github\caffe-mini\caffe\bnll_layer.cpp(47): note: see reference to class template instantiation 'caffe::BNLLLayer<float>' being compiled
+d:\workspace\github\caffe-mini\caffe\bnll_layer.cpp(40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  d:\workspace\github\caffe-mini\caffe\bnll_layer.cpp(31): note: while compiling class template member function 'float caffe::BNLLLayer<float>::Backward_cpu(const std::vector<caffe::Blob<float> *,std::allocator<_Ty>> &,const bool,std::vector<_Ty,std::allocator<_Ty>> *)'
+          with
+          [
+              _Ty=caffe::Blob<float> *
+          ]
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(22): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  d:\workspace\github\caffe-mini\caffe\vision_layers.hpp(75): note: see reference to class template instantiation 'caffe::NeuronLayer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  blob.cpp
+d:\workspace\github\caffe-mini\caffe\blob.cpp(179): warning C4244: 'argument': conversion from 'const double' to 'float', possible loss of data
+  d:\workspace\github\caffe-mini\caffe\blob.cpp(170): note: while compiling class template member function 'void caffe::Blob<double>::ToProto(caffe::BlobProto *,bool) const'
+  d:\workspace\github\caffe-mini\caffe\blob.cpp(189): note: see reference to class template instantiation 'caffe::Blob<double>' being compiled
+d:\workspace\github\caffe-mini\caffe\blob.cpp(184): warning C4244: 'argument': conversion from 'const double' to 'float', possible loss of data
+  caffe.cpp
+  Generating Code...
+Debug\zero_copy_stream_impl.obj : warning LNK4042: object specified more than once; extras ignored
+  caffe-mini.vcxproj -> D:\workspace\projects\tempFiles\vs2015\caffe-mini\Debug\caffe-mini.exe

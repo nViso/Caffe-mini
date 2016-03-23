@@ -1,0 +1,41 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of zero_copy_stream_impl.cc will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are ..\..\..\..\..\github\Caffe-mini\google\protobuf\io\zero_copy_stream_impl.cc, ..\..\..\..\..\github\Caffe-mini\google\protobuf\zero_copy_stream_impl.cc.
+  test_images.cpp
+test_images.cpp(138): warning C4018: '<': signed/unsigned mismatch
+test_images.cpp(196): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\workspace\github\caffe-mini\caffe\layer.hpp(134): warning C4018: '<': signed/unsigned mismatch
+  d:\workspace\github\caffe-mini\caffe\layer.hpp(130): note: while compiling class template member function 'void caffe::Layer<Dtype>::ToProto(caffe::LayerParameter *,bool)'
+          with
+          [
+              Dtype=float
+          ]
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vector(1600): note: see reference to class template instantiation 'caffe::Layer<Dtype>' being compiled
+          with
+          [
+              Dtype=float
+          ]
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vector(1599): note: while compiling class template member function 'void std::vector<std::shared_ptr<caffe::Layer<Dtype>>,std::allocator<_Ty>>::_Destroy(std::shared_ptr<caffe::Layer<Dtype>> *,std::shared_ptr<caffe::Layer<Dtype>> *)'
+          with
+          [
+              Dtype=float,
+              _Ty=std::shared_ptr<caffe::Layer<float>>
+          ]
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vector(1659): note: see reference to function template instantiation 'void std::vector<std::shared_ptr<caffe::Layer<Dtype>>,std::allocator<_Ty>>::_Destroy(std::shared_ptr<caffe::Layer<Dtype>> *,std::shared_ptr<caffe::Layer<Dtype>> *)' being compiled
+          with
+          [
+              Dtype=float,
+              _Ty=std::shared_ptr<caffe::Layer<float>>
+          ]
+  d:\workspace\github\caffe-mini\caffe\net.hpp(95): note: see reference to class template instantiation 'std::vector<std::shared_ptr<caffe::Layer<Dtype>>,std::allocator<_Ty>>' being compiled
+          with
+          [
+              Dtype=float,
+              _Ty=std::shared_ptr<caffe::Layer<float>>
+          ]
+  test_images.cpp(96): note: see reference to class template instantiation 'caffe::Net<float>' being compiled
+Release\zero_copy_stream_impl.obj : warning LNK4042: object specified more than once; extras ignored
+  Generating code
+  8 of 14800 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
+    2 functions were new in current compilation
+    118 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  caffe-mini.vcxproj -> D:\workspace\projects\tempFiles\vs2015\caffe-mini\Release\caffe-mini.exe
