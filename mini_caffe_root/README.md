@@ -32,9 +32,14 @@ All these outputs are computed by the corresponding inner product layers. Among 
 
 The details of how to get these outputs are in src/test_images.cpp.
 
+## The Bin Folder
+The bin folder contains binary files both in bebug and release model, which may help you deal with program problems.
+
 ##How to Use 
 
-First add the folder which contains the file "caffe-mini.exe" to your PATH environment variable. 
+There are 2 different versions of runable files, one is debug version (in the folder Debug/caffe-mini.exe) and the other is release version(in the folder Release/caffe-mini.exe). The release version is faster since it would not help you debug the program. 
+
+First add the folder which contains the file "caffe-mini.exe"(Debug or Release, as you wish) to your PATH environment variable. 
 
 Then run the following in the command line:
  
