@@ -33,16 +33,13 @@ All these outputs are computed by the corresponding inner product layers. Among 
 The details of how to get these outputs are in src/test_images.cpp.
 
 ## The Bin Folder
-The bin folder contains runable exe files which both in debug and release models(bin/runable/Debug and bin/runable/Release each) . Beside this, it also contains .obj files that located in the bin/obj folder. 
-
+The bin folder contains runable exe files which is bin/caffe-mini.exe .
 ## The SRC Folder
 In the src folder, there are source code of caffe itself and the dependence librarys, which are eigen and protobuf. If you want to compile caffe in your own machine, you still need the opencv to load images. If you just want to use it, directly run the .exe file, you don't need compile it again. You can check [this page](https://github.com/nViso/Caffe-mini) for details.
 
 ##How to Use 
 
-There are 2 different versions of runable files, one is debug version (in the folder bin/runable/Debug/caffe-mini.exe) and the other is release version(in the folder bin/runable/Release/caffe-mini.exe). The release version is faster since it would not help you debug the program. 
-
-First add the folder which contains the file "caffe-mini.exe"(Debug or Release, as you wish) to your PATH environment variable. 
+First add the folder which contains the file "caffe-mini.exe"(path/to/bin) to your PATH environment variable. 
 
 Then run the following in the command line:
  
