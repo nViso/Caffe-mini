@@ -334,6 +334,7 @@ namespace downgrade_proto {
 
 		v0_layer->set_kernelsize(layer.convolution_param().kernel_size(0));
 		v0_layer->set_stride(layer.convolution_param().stride(0));
+		v0_layer->set_pad(layer.convolution_param().pad(0));
 
 		// add the weight filler if it exist
 		CopyConvWeightFiller(v0_layer, layer);
